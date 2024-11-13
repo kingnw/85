@@ -298,13 +298,14 @@ def recommend():
 def index():
     recommendations = get_recommended_movies(current_user)
     genres = get_genres()
+    trending_movies = get_trending_movies()
     most_watched_movies = get_top_rated_movies()
     new_released_movies = get_new_released_movies()
     return render_template(
         'index.html',
         recommendations=recommendations,
         genres=genres,
-        trending_movies=most_watched_movies,
+        trending_movies=trending_movies,
         most_watched_movies=most_watched_movies,
         new_released_movies=new_released_movies
     )
